@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Pagination  from './Pagination';
-
+import Pagination from './Pagination'
 
 const Allproduct = () => {
 
@@ -46,17 +45,15 @@ const Allproduct = () => {
             })
     },[])
 
+
     const FilterCategories = (CategoriesData) => {
         if(CategoriesData === 'All'){
             setgetData(Datas);
         }else{
-            
             const AllproductList = Datas.filter((CurrentElem) => {
                 return CurrentElem.category === CategoriesData
             })
-            console.log(AllproductList)
             setgetData(AllproductList);
-            
         }
     }
     
@@ -67,8 +64,10 @@ const Allproduct = () => {
     }else{
         return (
             <>
-            <Pagination  totalPosts={Datas.length} postPerPage={postPerPage} setCurrentPage={setgetData}/>
+            <Pagination  postPerPage={postPerPage} totalPosts={getData.length} PaginationClick={setcurrentPage}/>
             <div className="main-container">
+
+                    
 
                     <div className="left-side-wrap">
                         <ul className="categories-list">
